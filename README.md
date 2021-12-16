@@ -1,4 +1,4 @@
-# CustomAspNetUser
+# Modular User
 
 ## Extra configuration for web project.
 
