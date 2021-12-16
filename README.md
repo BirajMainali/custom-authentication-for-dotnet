@@ -2,14 +2,14 @@
 
 ## Extra configuration for web project.
 
-#### Add new authentication service and `UseUserconfiguration` which is the extension method `IServiceCollection` located at `Application\DiConfigutaion`.
+##### Add new authentication service and `UseUserconfiguration` which is the extension method `IServiceCollection` located at `Application\DiConfigutaion`.
 ```cs
   services.UseUserConfiguration();
   services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x => { x.LoginPath = "/Login"; });
 ```
 
-#### Create new authentication manager
+##### Create new authentication manager
 
 ```cs
 public interface IAuthManager
@@ -69,7 +69,7 @@ public class AuthenticationManager : IAuthenticationManager
     }
 ```
 
-#### Login / Register User
+##### Login / Register User
 
 ```cs
 public IActionResult Index() => View(new LoginVm());
@@ -114,7 +114,7 @@ public IActionResult Index() => View(new LoginVm());
         }
 ```
 
-#### Creating current user provider 
+##### Creating current user provider 
 
 ```cs
 public interface ICurrentUserProvider
