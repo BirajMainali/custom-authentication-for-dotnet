@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
-namespace CustomAspNetUser.Crypter;
+namespace User.Crypter;
 
 public class Crypter
 {

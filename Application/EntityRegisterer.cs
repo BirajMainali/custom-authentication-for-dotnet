@@ -1,13 +1,13 @@
-﻿using CustomAspNetUser.Model;
+﻿using User.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace CustomAspNetUser.Application;
+namespace User.Application;
 
 public static class EntityRegisterer
 {
     public static ModelBuilder AddUser(this ModelBuilder builder)
     {
-        builder.Entity<User>();
+        builder.Entity<Model.User>();
         return builder;
     }
 }

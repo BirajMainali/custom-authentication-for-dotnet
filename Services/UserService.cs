@@ -1,11 +1,11 @@
 ﻿using System.Transactions;
-using CustomAspNetUser.Dto;
-using CustomAspNetUser.Model;
-using CustomAspNetUser.Repository.Interfaces;
-using CustomAspNetUser.Services.Interfaces;
-using CustomAspNetUser.Validator.Interfaces;
+using User.Model;
+using User.Dto;
+using User.Repository.Interfaces;
+using User.Services.Interfaces;
+using User.Validator.Interfaces;
 
-namespace CustomAspNetUser.Services;
+namespace User.Services;
 
 public class UserService : IUserService
 {
@@ -17,18 +17,18 @@ public class UserService : IUserService
         _userRepository = userRepository;
         _userValidator = userValidator;
     }
-    public async Task<User> CreateUser(UserDto dto)
+    public async Task<Model.User> CreateUser(UserDto dto)
     {
         using var tsc = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
         await _userValidator.EnsureUniqueUserEmail(dto.Email);
-        var user = new User(dto.Name, dto.Gender, dto.Email, Crypter.Crypter.Crypt(dto.Password), dto.Address,dto.Phone);
+        var user = new Model.User(dto.Name, dto.Gender, dto.Email, Crypter.Crypter.Crypt(dto.Password), dto.Address,dto.Phone);
         await _userRepository.CreateAsync(user);
         await _userRepository.FlushAsync();
         tsc.Complete();
         return user;
     }
 
-    public async Task Update(User user, UserDto dto)
+    public async Task Update(Model.User user, UserDto dto)
     {
         using var tsc = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
         await _userValidator.EnsureUniqueUserEmail(dto.Email);
@@ -38,7 +38,7 @@ public class UserService : IUserService
         tsc.Complete();
     }
 
-    public async Task Remove(User user)
+    public async Task Remove(Model.User user)
     {
         using var tsc = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
         _userRepository.Remove(user);

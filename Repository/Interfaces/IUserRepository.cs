@@ -1,9 +1,9 @@
-﻿using CustomAspNetUser.Base.GenericRepository.Interfaces;
-using CustomAspNetUser.Model;
+﻿using User.Model;
+using User.Base.GenericRepository.Interfaces;
 
-namespace CustomAspNetUser.Repository.Interfaces;
+namespace User.Repository.Interfaces;
 
-public interface IUserRepository : IGenericRepository<User>
+public interface IUserRepository : IGenericRepository<Model.User>
 {
     Task<bool> IsEmailUsed(string email, long? excludedId = null);
 }

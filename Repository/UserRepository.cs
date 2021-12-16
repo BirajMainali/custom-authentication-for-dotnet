@@ -1,11 +1,11 @@
-﻿using CustomAspNetUser.Base.GenericRepository;
-using CustomAspNetUser.Model;
-using CustomAspNetUser.Repository.Interfaces;
+﻿using User.Model;
 using Microsoft.EntityFrameworkCore;
+using User.Base.GenericRepository;
+using User.Repository.Interfaces;
 
-namespace CustomAspNetUser.Repository;
+namespace User.Repository;
 
-public class UserRepository : GenericRepository<User>, IUserRepository
+public class UserRepository : GenericRepository<Model.User>, IUserRepository
 {
     public UserRepository(DbContext context) : base(context)
     {

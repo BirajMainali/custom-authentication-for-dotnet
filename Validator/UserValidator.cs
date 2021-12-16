@@ -1,8 +1,8 @@
-﻿using CustomAspNetUser.Exception;
-using CustomAspNetUser.Repository.Interfaces;
-using CustomAspNetUser.Validator.Interfaces;
+﻿using User.Exception;
+using User.Repository.Interfaces;
+using User.Validator.Interfaces;
 
-namespace CustomAspNetUser.Validator;
+namespace User.Validator;
 
 public class UserValidator : IUserValidator
 {

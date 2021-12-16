@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using CustomAspNetUser.Base.GenericRepository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using User.Base.GenericRepository.Interfaces;
 
-namespace CustomAspNetUser.Base.GenericRepository;
+namespace User.Base.GenericRepository;
 
 public class GenericRepository<T>  : IGenericRepository<T> where T : class
 {

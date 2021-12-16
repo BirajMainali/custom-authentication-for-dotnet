@@ -1,4 +1,4 @@
-﻿namespace CustomAspNetUser.Validator.Interfaces;
+﻿namespace User.Validator.Interfaces;
 
 public interface IUserValidator
 {

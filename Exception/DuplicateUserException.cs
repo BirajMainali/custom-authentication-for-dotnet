@@ -1,4 +1,4 @@
-﻿namespace CustomAspNetUser.Exception;
+﻿namespace User.Exception;
 
 public class DuplicateUserException : System.Exception
 {

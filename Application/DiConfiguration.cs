@@ -1,20 +1,19 @@
-﻿using CustomAspNetUser.Repository;
-using CustomAspNetUser.Repository.Interfaces;
-using CustomAspNetUser.Services;
-using CustomAspNetUser.Services.Interfaces;
-using CustomAspNetUser.Validator;
-using CustomAspNetUser.Validator.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using User.Repository;
+using User.Repository.Interfaces;
+using User.Services;
+using User.Services.Interfaces;
+using User.Validator;
+using User.Validator.Interfaces;
 
-namespace CustomAspNetUser.Application
+namespace User.Application;
+
+public static class DiConfiguration
 {
-    public static class DiConfiguration
+    public static void UseUserConfiguration(this IServiceCollection services)
     {
-        public static void UseUserConfiguration(this IServiceCollection services)
-        {
-            services.AddScoped<IUserRepository, UserRepository>().
-                AddScoped<IUserService, UserService>()
-                .AddScoped<IUserValidator, UserValidator>();
-        }
+        services.AddScoped<IUserRepository, UserRepository>().
+            AddScoped<IUserService, UserService>()
+            .AddScoped<IUserValidator, UserValidator>();
     }
 }

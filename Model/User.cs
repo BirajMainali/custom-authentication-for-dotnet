@@ -1,4 +1,4 @@
-﻿namespace CustomAspNetUser.Model;
+﻿namespace User.Model;
 
 public class User
 {

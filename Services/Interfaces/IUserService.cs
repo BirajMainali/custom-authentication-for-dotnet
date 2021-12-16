@@ -1,11 +1,11 @@
-﻿using CustomAspNetUser.Dto;
-using CustomAspNetUser.Model;
+﻿using User.Model;
+using User.Dto;
 
-namespace CustomAspNetUser.Services.Interfaces;
+namespace User.Services.Interfaces;
 
 public interface IUserService
 {
-    Task<User> CreateUser(UserDto dto);
-    Task Update(User user, UserDto dto);
-    Task Remove(User user);
+    Task<Model.User> CreateUser(UserDto dto);
+    Task Update(Model.User user, UserDto dto);
+    Task Remove(Model.User user);
 }
