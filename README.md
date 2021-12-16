@@ -2,6 +2,19 @@
 
 ## Extra configuration for web project.
 
+##### Ensure HTTP request pipeline configuration.
+
+```cs
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}").RequireAuthorization(); // enabling authentication for all endpoints
+```
+
+
 ##### Add new authentication service and `UseUserconfiguration` which is the extension method `IServiceCollection` located at `Application\DiConfigutaion`.
 ```cs
   services.UseUserConfiguration();
