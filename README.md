@@ -1,6 +1,6 @@
-# Modular User
+# Modular User service.
 
-## Extra configuration for web project.
+## Extra configuration for `Web Project`.
 
 ##### Ensure HTTP request pipeline configuration.
 
@@ -22,7 +22,7 @@ app.MapControllerRoute(
                 .AddCookie(x => { x.LoginPath = "/Login"; });
 ```
 
-##### Create new authentication manager
+##### Create new authentication manager on `Web Project` 
 
 ```cs
 public interface IAuthManager
